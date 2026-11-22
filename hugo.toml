@@ -1,0 +1,33 @@
+baseURL = 'https://yeshiqi-github.github.io/'
+locale = 'zh-cn'
+title = "Stephen Yeh 的博客"
+theme = 'PaperMod'
+
+[params]
+mainSections = ['research', 'programming', 'english', 'life']
+ShowReadingTime = true
+ShowWordCount = true
+
+[params.homeInfoParams]
+Title = '你好，欢迎来访'
+Content = '这里记录我的科研笔记、编程学习、英语积累和生活杂记。'
+
+[[menu.main]]
+name = '科研'
+url = '/research/'
+weight = 1
+
+[[menu.main]]
+name = '编程'
+url = '/programming/'
+weight = 2
+
+[[menu.main]]
+name = '英语'
+url = '/english/'
+weight = 3
+
+[[menu.main]]
+name = '生活'
+url = '/life/'
+weight = 4

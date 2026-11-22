@@ -1,0 +1,5 @@
+# Hugo 生成的网站文件，不需要上传到 GitHub（部署时云端自动生成）
+/public/
+/resources/
+/.hugo_build.lock
+hugo_stats.json
