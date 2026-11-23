@@ -3,14 +3,47 @@ locale = 'zh-cn'
 title = "Stephen Yeh 的博客"
 theme = 'PaperMod'
 
+[outputs]
+home = ['HTML', 'RSS', 'JSON']
+
 [params]
 mainSections = ['research', 'programming', 'english', 'life']
+defaultTheme = 'auto'
 ShowReadingTime = true
 ShowWordCount = true
+ShowBreadCrumbs = true
 
-[params.homeInfoParams]
-Title = '你好，欢迎来访'
-Content = '这里记录我的科研笔记、编程学习、英语积累和生活杂记。'
+[params.profileMode]
+enabled = true
+title = 'Stephen Yeh'
+subtitle = '化学博士在读 · 记录科研、编程、英语与生活'
+imageUrl = '/avatar.png'
+imageWidth = 120
+imageHeight = 120
+
+[[params.profileMode.buttons]]
+name = '科研'
+url = '/research/'
+
+[[params.profileMode.buttons]]
+name = '编程'
+url = '/programming/'
+
+[[params.profileMode.buttons]]
+name = '英语'
+url = '/english/'
+
+[[params.profileMode.buttons]]
+name = '生活'
+url = '/life/'
+
+[[params.socialIcons]]
+name = 'github'
+url = 'https://github.com/YeShiqi-github'
+
+[[params.socialIcons]]
+name = 'email'
+url = 'mailto:53200001+YeShiqi-github@users.noreply.github.com'
 
 [[menu.main]]
 name = '科研'
@@ -31,3 +64,8 @@ weight = 3
 name = '生活'
 url = '/life/'
 weight = 4
+
+[[menu.main]]
+name = '搜索'
+url = '/search/'
+weight = 10
