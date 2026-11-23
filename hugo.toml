@@ -1,71 +1,146 @@
 baseURL = 'https://yeshiqi-github.github.io/'
 locale = 'zh-cn'
+defaultContentLanguage = 'zh-cn'
+hasCJKLanguage = true
 title = "Stephen Yeh 的博客"
-theme = 'PaperMod'
+theme = 'hugo-theme-stack'
 
-[outputs]
-home = ['HTML', 'RSS', 'JSON']
+[pagination]
+  pagerSize = 5
+
+[permalinks]
+  page = '/:slug/'
 
 [params]
-mainSections = ['research', 'programming', 'english', 'life']
-defaultTheme = 'auto'
-ShowReadingTime = true
-ShowWordCount = true
-ShowBreadCrumbs = true
+  mainSections = ['research', 'programming', 'english', 'life']
+  rssFullContent = true
+  favicon = 'img/avatar.png'
 
-[params.profileMode]
-enabled = true
-title = 'Stephen Yeh'
-subtitle = '化学博士在读 · 记录科研、编程、英语与生活'
-imageUrl = '/avatar.png'
-imageWidth = 120
-imageHeight = 120
+  [params.footer]
+    since = 2026
+    customText = 'Stephen Yeh 的博客'
 
-[[params.profileMode.buttons]]
-name = '科研'
-url = '/research/'
+  [params.sidebar]
+    subtitle = '化学博士在读 · 记录科研、编程、英语与生活'
+    avatar = 'img/avatar.png'
 
-[[params.profileMode.buttons]]
-name = '编程'
-url = '/programming/'
+  [params.article]
+    toc = true
+    readingTime = true
 
-[[params.profileMode.buttons]]
-name = '英语'
-url = '/english/'
+    [params.article.list]
+      showTags = true
 
-[[params.profileMode.buttons]]
-name = '生活'
-url = '/life/'
+  [params.widgets]
+    homepage = [
+      { type = 'search' },
+      { type = 'archives', params = { limit = 5 } },
+    ]
+    page = [{ type = 'toc' }]
 
-[[params.socialIcons]]
-name = 'github'
-url = 'https://github.com/YeShiqi-github'
+  [params.colorScheme]
+    toggle = true
+    default = 'auto'
 
-[[params.socialIcons]]
-name = 'email'
-url = 'mailto:53200001+YeShiqi-github@users.noreply.github.com'
+  [params.comments]
+    enabled = false
 
 [[menu.main]]
-name = '科研'
-url = '/research/'
-weight = 1
+  name = '首页'
+  url = '/'
+  weight = 1
+
+  [menu.main.params]
+    icon = 'home'
 
 [[menu.main]]
-name = '编程'
-url = '/programming/'
-weight = 2
+  name = '科研'
+  url = '/research/'
+  weight = 2
 
 [[menu.main]]
-name = '英语'
-url = '/english/'
-weight = 3
+  name = '编程'
+  url = '/programming/'
+  weight = 3
 
 [[menu.main]]
-name = '生活'
-url = '/life/'
-weight = 4
+  name = '英语'
+  url = '/english/'
+  weight = 4
 
 [[menu.main]]
-name = '搜索'
-url = '/search/'
-weight = 10
+  name = '生活'
+  url = '/life/'
+  weight = 5
+
+[[menu.main]]
+  name = '归档'
+  url = '/archives/'
+  weight = 6
+
+  [menu.main.params]
+    icon = 'archives'
+
+[[menu.main]]
+  name = '搜索'
+  url = '/search/'
+  weight = 7
+
+  [menu.main.params]
+    icon = 'search'
+
+[[menu.social]]
+  identifier = 'github'
+  name = 'GitHub'
+  url = 'https://github.com/YeShiqi-github'
+
+  [menu.social.params]
+    icon = 'brand-github'
+
+[[menu.social]]
+  identifier = 'email'
+  name = 'Email'
+  url = 'mailto:53200001+YeShiqi-github@users.noreply.github.com'
+
+  [menu.social.params]
+    icon = 'messages'
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.extensions]
+      [markup.goldmark.extensions.passthrough]
+        enable = true
+
+        [markup.goldmark.extensions.passthrough.delimiters]
+          block  = [['\\[', '\\]'], ['$$', '$$']]
+          inline = [['\\(', '\\)']]
+
+    [markup.goldmark.renderer]
+      unsafe = true
+
+  [markup.tableOfContents]
+    endLevel = 4
+    ordered = true
+    startLevel = 2
+
+  [markup.highlight]
+    noClasses = false
+    codeFences = true
+    guessSyntax = true
+    lineNoStart = 1
+    lineNos = true
+    lineNumbersInTable = true
+    tabWidth = 4
+
+[related]
+  includeNewer = true
+  threshold = 60
+  toLower = false
+
+  [[related.indices]]
+    name = 'tags'
+    weight = 100
+
+  [[related.indices]]
+    name = 'categories'
+    weight = 200
