@@ -21,7 +21,6 @@ theme = 'hugo-theme-stack'
     customText = 'Stephen Yeh 的博客'
 
   [params.sidebar]
-    subtitle = '化学博士在读 · 记录科研、编程、英语与生活'
     avatar = 'img/avatar.png'
 
   [params.article]
